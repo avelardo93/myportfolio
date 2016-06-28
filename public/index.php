@@ -17,7 +17,7 @@
 		
 		//Check if simple anti-bot test is correct
 		if (!$_POST['telephone']) {
-			$errName = 'Please enter your telephone number';
+			$errTelephone = 'Please enter your telephone number';
 		}
 
 		// Check if email has been entered and is valid
