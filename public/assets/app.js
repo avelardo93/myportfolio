@@ -1,17 +1,23 @@
-/*
-$(document).ready(function(){
-    var name,phone,email,message;
-    $("#send-email").click(function(){      
-        name=$("#name").val();
-        phone=$("#phone").val();
-        email=$("#email").val();
-        message=$("#message").val();
-        $.get("http://localhost:8000/send",{name:name,phone:phone,email:email,message:message},function(data){
-        if(data=="sent")
-        {
-            $("#contactForm").empty().html("The message has been sent. Anthony Velardo will get back to you as soon as possible.");
-        }
-
-});
+$(document).ready(function () {
+    var to, name, phone, email, message;
+    $("#send_email").click(function () {
+        // enter your email account that you want to recieve emails at. 
+        to = "avelardo93@gmail.com";
+        name = $("#name").val().trim();
+        phone = $("#phone").val().trim();
+        email = $("#email").val().trim();
+        message = $("#message").val().trim();
+        // $("#message").text("Sending E-mail...Please wait");
+        $.get("http://localhost:8000/send", {
+            to: to,
+            name: name,
+            phone: phone,
+            email: email,
+            message: message           
+        }, function (data) {
+            if (data == "sent") {
+                console.log("Email sent");
+            }
+        });
     });
 });
