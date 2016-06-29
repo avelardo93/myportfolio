@@ -2,7 +2,7 @@ var express = require('express');
 var nodemailer = require("nodemailer");
 var smtpTransport = require("nodemailer-smtp-transport")
 var app = express();
-var config = require('./config.js');
+//var config = require('./config.js');
 var path = require('path');
 
 
@@ -19,19 +19,14 @@ app.get('/', function(req, res){
 
 
 //nodeMailer 
-var smtpTransport = nodemailer.createTransport("SMTP", {
-
-    service: 'Gmail',
-    auth: {
-        // enter your gmail account
-        user: config.email_username,  
-        // enter your gmail password
-        pass: config.email_password
-    }
-});
+var transporter = nodemailer.createTransport(
+    smtpTransport('smtps://avelardo93%40gmail.com:password@smtp.gmail.com')
+);
 
 
 app.get('/send', function (req, res) {
+
+	var transporter = nodemailer.createTransport(options);
 
     var mailOptions = {
         to: req.query.to,
@@ -43,8 +38,7 @@ app.get('/send', function (req, res) {
                "Message: " + req.query.message 
     }
 
-    console.log(mailOptions);
-    smtpTransport.sendMail(mailOptions, function (err, response) {
+    transporter.sendMail(mailOptions, function (err, response) {
         if (err) {
             console.log(err);
             res.end("error");
