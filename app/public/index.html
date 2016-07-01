@@ -347,7 +347,8 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2 class="section-heading text-center">CONTACT ME</h2>
                     <hr class="primary">
-                <form name="sentMessage" role="form" id="contactForm" novalidate name="contactform">
+
+                <form name="sentMessage" role="form" id="contactForm" novalidate name="contactform" method="post" action="">
                     <div class="control-group form-group">
                         <div class="controls">
                             <label for="first_name">Full Name:</label>
@@ -375,16 +376,9 @@
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-                    <button type="submit" name="submit" class="btn btn-primary" id="send-email">Send Message</button>
+                    <button type="submit" name="submit" class="btn btn-primary" id="sendEmail">Send Message</button>
                 </form>
 
-                <div id="modal1" class="modal modal-fixed-footer thank-you-modal">
-                    <div class="modal-content">
-                        <h4>Thank you!</h4>
-                        <p>Your email has been sent. I'll get back to you shortly.</p>
-                    </div>
-                </div> 
-                               
                 </div>
             </div>
         </div>

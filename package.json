@@ -9,9 +9,9 @@
   "author": "Anthony Velardo",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "nodemailer": "^2.4.2",
-    "nodemailer-smtp-transport": "^2.5.0",
     "router": "^1.1.4"
   }
 }
