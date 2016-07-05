@@ -4,9 +4,9 @@ $('#contactform').on( 'click', '#sendEmail', function() {
     var contact = 
       {
         name: $("name").val(),
-        phone: $("#phone").val(),
+        telephone: $("#telephone").val(),
         email: $("#email").val(),
-        mess: $("#message").val(),   
+        message: $("#message").val(),   
       };
 
       var currentURL = window.location.origin;
@@ -18,7 +18,7 @@ $('#contactform').on( 'click', '#sendEmail', function() {
         })
 
       $('#name').val("");
-      $('#phone').val("");
+      $('#telephone').val("");
       $('#email').val("");
       $('#message').val("");
     

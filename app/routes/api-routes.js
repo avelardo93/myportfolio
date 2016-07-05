@@ -23,8 +23,10 @@ module.exports = function(app){
 	    smtpTransport.sendMail({
 	       from: req.body.email, // sender address
 	       to: 'avelardo93@gmail.com', // comma separated list of receivers
-	       subject: 'portfolio email from ' + req.body.name, // Subject line
-	       text: 'New message from: ' + req.body.email + ' : ' + req.body.mess + ' : ' + req.body.phone // plaintext body
+	       subject: 'portfolio email from ' + req.body.email, // Subject line
+	       text: 'New message from: ' + req.body.name + ' : ' 
+	       + req.body.telephone + ' : ' + 
+	       req.body.message // plaintext body
 	    }, function(error, response){
 	       if(error){
 	           console.log(error);
