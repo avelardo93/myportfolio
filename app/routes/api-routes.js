@@ -34,6 +34,7 @@ module.exports = function(app){
 	           console.log("Message sent: " + response.message);
 	       }
 	    });
+	    res.redirect( '/' );
 	});
 
 }
